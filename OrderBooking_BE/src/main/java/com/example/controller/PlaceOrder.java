@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-
 @RequestMapping("/orderdetails")
 public class PlaceOrder {
 
     @RequestMapping(value="/addOrder", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public void addOrder(CustomerOrder custOrder) {
+    public boolean addOrder(CustomerOrder custOrder) {
         boolean res;
         int ExecutionPrice = 150;
         int ExecutionQty = 60;
@@ -26,7 +25,10 @@ public class PlaceOrder {
         } else {
             res = false;
         }
+        return res;
     }
+
+
     
 }
 
