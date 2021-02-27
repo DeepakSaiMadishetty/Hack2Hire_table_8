@@ -1,0 +1,36 @@
+<div class="form-container" *ngIf='Marketstatus'>
+        <div class="srouce"><a title="Learn How to create Beautiful HTML & CSS login page template" href="https://www.w3jar.com/beautiful-html-css-login-page-template/">DBS Book Order System</a></div>
+            <form action="" class="the-form">
+                <label for="Search Stock">DBS BOOK1</label>
+                <input type="dropdown" name="books"  [(ngModel)]="StockName">
+
+                <label for="OrderType">Order Type</label>
+                <input type="Textfield" name="text" id="Textfield" [(ngModel)]="OrderType">
+                
+                <label for="Price">Price</label>
+                <input type="number" name ="number" id="Price" [(ngModel)]="Price">
+                
+                <label for="Quantity">Quantity</label>
+                <input type="Textfield"  name="number" id="Quantity" [(ngModel)]="Quantity">
+
+                <input type="submit" value="Place Order" (click)="handleplaceorder()">
+            </form> 
+ </div>
+    <div class="table-responsive"  style="color:white;align-content:center;" *ngIf='orderstatus'>
+        <table>
+            <tr>
+                <th>Stockname</th>
+                <th>Ordertype</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <th>{{StockName}}</th>
+                <th>{{OrderType}}</th>
+                <th>{{Price}}</th>
+                <th>{{Quantity}}</th>
+            </tr>
+        </table>
+    </div>
+
+
